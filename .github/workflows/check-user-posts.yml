@@ -1,0 +1,16 @@
+name: Check User Posts for Slack Notification
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 5分ごとに実行
+  workflow_dispatch:        # 手動実行も可能
+
+jobs:
+  check-posts:
+    name: Check for new posts
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Call API and check posts
+        run: |
+          echo "ここでAPIを呼び出して新規投稿をチェック"
+          # 条件に合えばSlack通知処理を追加
