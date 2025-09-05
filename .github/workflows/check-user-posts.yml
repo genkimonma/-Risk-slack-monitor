@@ -1,10 +1,8 @@
 name: Check User Posts for Slack Notification
-
 on:
   schedule:
     - cron: '*/5 * * * *'  # 5分ごとに実行
   workflow_dispatch:        # 手動実行も可能
-
 jobs:
   check-posts:
     name: Check for new posts
@@ -14,7 +12,8 @@ jobs:
         run: |
           echo "ここでAPIを呼び出して新規投稿をチェック"
           # 条件に合えばSlack通知処理を追加
-- name: Send test message to Slack
+          
+      - name: Send test message to Slack
         run: |
           curl -X POST -H 'Content-type: application/json' \
           --data '{"text":"GitHub Actionsからのテスト通知です！"}' \
